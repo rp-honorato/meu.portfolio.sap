@@ -1,7 +1,120 @@
-<mvc:View controllerName="meu.portfolio.sap.controller.View1"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+<mvc:View
+    controllerName="meu.portfolio.sap.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:tnt="sap.tnt"
+    displayBlock="true"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
-    </Page>
+<!--<Page id="page" title="{i18n>title}">-->
+<tnt:ToolPage id="toolPage">
+	<tnt:header>
+	    <tnt:ToolHeader>
+		<Button
+			id="sideNavigationToggleButton"
+			icon="sap-icon://menu2"
+			type="Transparent"
+			press=".onSideNavButtonPress">
+			<layoutData>		
+			</layoutData>
+		</Button>
+        <Button
+            text="This is the root page"
+            type="Transparent" press="">
+			<layoutData>
+			</layoutData>
+		</Button>
+		<Button
+            text="This is the first page"
+            type="Transparent">
+			<layoutData>	
+			</layoutData>
+		</Button>
+		<Button
+            text="Lorem Ipsum"
+            type="Transparent">
+			<layoutData>	
+	    </layoutData>
+		</Button>
+        <Button
+            text="This is the root page of the second element"
+            type="Transparent">
+		    <layoutData>
+		    </layoutData>
+		</Button>
+		<ToolbarSpacer/>
+		<Button
+            text=""
+            type="Ghost"
+            press=".handleUserNamePress"
+            icon="sap-icon://information">
+			<layoutData> 	
+			</layoutData>
+		</Button>
+	    </tnt:ToolHeader>
+	</tnt:header>
+		<tnt:sideContent>
+			<tnt:SideNavigation
+				expanded="true"
+				selectedKey="{/selectedKey}"
+				itemSelect=".onItemSelect">
+				<tnt:NavigationList items="{path: '/navigation'}">
+					<tnt:NavigationListItem
+						text="{title}"
+						icon="{icon}"
+						enabled="{enabled}"
+						expanded="{expanded}"
+						items="{items}"
+						key="{key}">
+						<tnt:NavigationListItem
+						text="{title}"
+						key="{key}"
+						enabled="{enabled}" />
+					</tnt:NavigationListItem>
+				</tnt:NavigationList>
+				<tnt:fixedItem>
+					<tnt:NavigationList items="{path: '/fixedNavigation'}">
+						<tnt:NavigationListItem text="{title}" icon="{icon}" />
+					</tnt:NavigationList>
+				</tnt:fixedItem>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+	<tnt:mainContents>
+		<NavContainer id="pageContainer" initialPage="root1">
+			<pages>
+				<ScrollContainer
+						id="root1"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+						class="sapUiContentPadding">
+				<Text text="This is the root page" />
+				</ScrollContainer>
+				<ScrollContainer
+						id="page1"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+						class="sapUiContentPadding">
+				<Text text="This is the first page" />
+				</ScrollContainer>
+				<ScrollContainer
+						id="page2"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+						class="sapUiContentPadding">
+				<Text text="Lorgit ipsum maiores, necessitatibus nemo nihil numquam odio officiis optiom" />
+				</ScrollContainer>
+				<ScrollContainer
+						id="root2"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+						class="sapUiContentPadding">
+						<Text text="This is the root page of the second element" />
+				</ScrollContainer>
+			</pages>
+		</NavContainer>
+	</tnt:mainContents>
+</tnt:ToolPage>
+<!--</Page>-->
 </mvc:View>
