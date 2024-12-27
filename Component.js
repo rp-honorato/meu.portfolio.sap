@@ -12,7 +12,10 @@ sap.ui.define([
 
         return UIComponent.extend("meu.portfolio.sap.Component", {
             metadata: {
-                manifest: "json"
+                manifest: "json",
+                config: {
+                    fullWidth: true
+                }
             },
 
             /**

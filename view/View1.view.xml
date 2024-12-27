@@ -1,7 +1,9 @@
 <mvc:View
     controllerName="meu.portfolio.sap.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
 	xmlns:tnt="sap.tnt"
+    xmlns:l="sap.ui.layout"
     displayBlock="true"
     xmlns="sap.m">
 <!--<Page id="page" title="{i18n>title}">-->
@@ -80,37 +82,64 @@
 	<tnt:mainContents>
 		<NavContainer id="pageContainer" initialPage="root1">
 			<pages>
-				<ScrollContainer
-						id="root1"
-						horizontal="false"
-						vertical="true"
-						height="100%"
-						class="sapUiContentPadding">
-				<Text text="This is the root page" />
+            <FlexBox
+				height="100%"
+				alignItems="Start"
+				justifyContent="Center">
+		<l:VerticalLayout class="sapUiContentPadding equalColumns" width="100%">
+		<FlexBox class="columns">
+			<Text text="Although they have different amounts of text, both columns are of equal height.">
+				<layoutData>
+					<FlexItemData
+						growFactor="1"
+						baseSize="0"
+						backgroundDesign="Solid"
+						styleClass="sapUiTinyMargin" />
+				</layoutData>
+			</Text>
+        <VBox>
+		<Image
+            src="https://raw.githubusercontent.com/rp-honorato/rp-honorato/main/profile-3d-contrib/profile-night-green.svg"
+            class="" width="50%" />
+        <Image
+            src="https://raw.githubusercontent.com/rp-honorato/rp-honorato/main/profile-summary-card-output/blue_green/0-profile-details.svg"
+            class="" width="50%" />
+	    </VBox>
+				<layoutData>
+					<FlexItemData
+						growFactor="1"
+						baseSize="0"
+						backgroundDesign="Solid"
+						styleClass="sapUiTinyMargin" />
+				</layoutData>
+			</Text>
+		</FlexBox>
+	</l:VerticalLayout>
+    </FlexBox>
 				</ScrollContainer>
 				<ScrollContainer
-						id="page1"
-						horizontal="false"
-						vertical="true"
-						height="100%"
-						class="sapUiContentPadding">
+				id="page1"
+				horizontal="false"
+				vertical="true"
+				height="100%"
+				class="sapUiContentPadding">
 				<Text text="This is the first page" />
 				</ScrollContainer>
 				<ScrollContainer
-						id="page2"
-						horizontal="false"
-						vertical="true"
-						height="100%"
-						class="sapUiContentPadding">
+				id="page2"
+				horizontal="false"
+				vertical="true"
+				height="100%"
+				class="sapUiContentPadding">
 				<Text text="Lorgit ipsum maiores, necessitatibus nemo nihil numquam odio officiis optiom" />
 				</ScrollContainer>
 				<ScrollContainer
-						id="root2"
-						horizontal="false"
-						vertical="true"
-						height="100%"
-						class="sapUiContentPadding">
-						<Text text="This is the root page of the second element" />
+				id="root2"
+				horizontal="false"
+				vertical="true"
+				height="100%"
+				class="sapUiContentPadding">
+				<Text text="This is the root page of the second element" />
 				</ScrollContainer>
 			</pages>
 		</NavContainer>
